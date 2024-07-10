@@ -1,0 +1,7 @@
+<div *ngIf="formSteps.length > 0">
+    <h2>{{ formSteps[currentStepIndex].title }}</h2>
+    <app-step [stepData]="formSteps[currentStepIndex]" [stepForm]="form.get(formSteps[currentStepIndex].title)" ></app-step>
+    <button (click)="goToPreviousStep()" [disabled]="currentStepIndex === 0">Previous</button>
+    <button (click)="goToNextStep()" [disabled]="currentStepIndex === formSteps.length - 1">Next</button>
+  </div>
+  
